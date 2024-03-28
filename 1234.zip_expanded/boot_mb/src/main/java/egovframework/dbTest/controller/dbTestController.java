@@ -1,0 +1,30 @@
+package egovframework.dbTest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import egovframework.dbTest.service.dbTestService;
+import egovframework.dbTest.service.dbTestVO;
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@Slf4j
+public class dbTestController {
+    
+    @Autowired
+    private dbTestService dbTestService;
+    
+    @RequestMapping(value="/dbTest.do", produces="application/json")
+    @ResponseBody
+    public dbTestVO dbSelect() {
+        log.info("컨트롤러");
+        dbTestVO list = dbTestService.selectTableData();
+        log.info("list" + list.toString());
+        return list;
+    }
+}
+

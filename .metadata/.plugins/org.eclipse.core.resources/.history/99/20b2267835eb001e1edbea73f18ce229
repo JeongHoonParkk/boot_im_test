@@ -1,0 +1,40 @@
+package egovframework.example.config;
+
+import java.io.IOException;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Configuration
+@MapperScan(basePackages = "egovframework.example.sample.service.impl")
+@Slf4j
+public class EgovConfigMapper {
+
+	 @Bean
+	    public SqlMapClientFactoryBean sqlMapClient(@Qualifier("dataSource") DataSource dataSource) throws IOException {
+	        SqlMapClientFactoryBean sqlMapClientFactoryBean = new SqlMapClientFactoryBean();
+	        sqlMapClientFactoryBean.setDataSource(dataSource);
+	        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+	        Resource[] resources = resolver.getResources("classpath:/egovframework/sqlmap/example/*.xml");
+	        sqlMapClientFactoryBean.setMappingLocations(resources);
+	        return sqlMapClientFactoryBean;
+	    }
+
+	@Bean
+	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
+		return new SqlSessionTemplate(sqlSessionFactory);
+	}
+
+}

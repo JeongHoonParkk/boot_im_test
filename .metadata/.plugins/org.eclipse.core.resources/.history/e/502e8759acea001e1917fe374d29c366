@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    spring: sspring.jpa.properties.javax.xml.accessExternalDTD=all
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test_ib
+    username: root
+    password: 1234!
+    

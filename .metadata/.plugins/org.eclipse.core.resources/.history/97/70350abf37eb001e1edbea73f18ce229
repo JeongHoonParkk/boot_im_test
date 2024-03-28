@@ -1,0 +1,40 @@
+package egovframework.example.config;
+
+import javax.sql.DataSource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SuppressWarnings("deprecation")
+@Configuration
+@ComponentScan
+@Slf4j 
+public class EgovConfigSqlmap {
+
+//	@Bean
+//	public SqlMapClientFactoryBean sqlMapClient(@Qualifier("dataSource") DataSource dataSource) {
+//		log.info("sqlMap 시작");
+//	    PathMatchingResourcePatternResolver pmrpr = new PathMatchingResourcePatternResolver();
+//	    SqlMapClientFactoryBean sqlMapClientFactoryBean = new SqlMapClientFactoryBean();
+//	    log.info("소스 읽는다");
+//	    sqlMapClientFactoryBean.setDataSource(dataSource);
+//	    log.info("경로 읽는다");
+//	    sqlMapClientFactoryBean.setConfigLocation(pmrpr.getResource("classpath:/egovframework/sqlmap/example/sql-map-config.xml"));
+//	    log.info("끝");
+//	    return sqlMapClientFactoryBean;
+//	}
+//	
+//	@Bean
+//	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
+//		return new SqlSessionTemplate(sqlSessionFactory);
+//	}
+
+}

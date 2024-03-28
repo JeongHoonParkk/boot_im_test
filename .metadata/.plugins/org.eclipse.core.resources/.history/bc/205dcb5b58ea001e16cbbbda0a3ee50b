@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="dbTestDAO">
+
+	<typeAlias alias="egovMap"
+		type="org.egovframe.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="dbTestVO"
+		type="egovframework.dbTest.service.dbTestVO" />
+
+	<resultMap id="dbTestVO"
+		class="egovframework.dbTest.service.dbTestVO">
+		<result property="id" column="ID" />
+		<result property="name" column="NAME" />
+	</resultMap>
+
+	<select id="selectTableData" resultMap="dbTestVO">
+        <![CDATA[
+            SELECT
+                ID, NAME
+            FROM imb
+        ]]>
+	</select>
+
+</sqlMap>

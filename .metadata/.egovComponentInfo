@@ -1,0 +1,9 @@
+
+[2024.03.27 16:45:14] Installed component:	egovframework.com.cmm	공통
+[2024.03.27 16:45:14] Installed component:	egovframework.com.uat.uia	일반로그인
+[2024.03.27 16:45:14] Installed component:	egovframework.com.uat.uap	로그인정책관리
+[2024.03.27 16:45:14] Installed component:	egovframework.com.sec.security	보안
+[2024.03.27 16:45:14] Installed component:	egovframework.com.cop.ems	메일연동 인터페이스
+[2024.03.27 16:45:14] Installed component:	egovframework.com.utl.fcc	유틸리티
+[2024.03.27 16:45:14] Installed component:	egovframework.com.utl.wed	웹에디터
+[2024.03.27 16:45:14] Installed component:	egovframework.com.utl.sim	시스템정보확인

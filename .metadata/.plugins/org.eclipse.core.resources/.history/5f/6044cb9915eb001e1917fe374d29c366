@@ -1,0 +1,40 @@
+package egovframework.example.config;
+
+import java.io.IOException;
+
+import javax.sql.DataSource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
+import lombok.extern.slf4j.Slf4j;
+
+@MapperScan(basePackages = "egovframework.dbTest.service.impl")
+@Slf4j
+public class EgovConfigMapper {
+
+//	@Bean
+//	public SqlSessionFactoryBean sqlSessionFactory(@Qualifier("dataSource") DataSource dataSource) throws IOException {
+//		log.info("mapper config 시작");
+//		PathMatchingResourcePatternResolver pmrpr = new PathMatchingResourcePatternResolver();
+//		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+//		log.info("소스 읽는다");
+//		sqlSessionFactoryBean.setDataSource(dataSource);
+//		log.info("경로 읽는다");
+//		sqlSessionFactoryBean.setConfigLocation(pmrpr.getResource("classpath:/egovframework/sqlmap/example/sql-map-config.xml"));
+//		sqlSessionFactoryBean.setMapperLocations(pmrpr.getResources("classpath:/egovframework/sqlmap/dbTestSqlMap/*.xml"));
+//		log.info("끝");
+//		return sqlSessionFactoryBean;
+//	}
+//
+//	@Bean
+//	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
+//		return new SqlSessionTemplate(sqlSessionFactory);
+//	}
+
+}

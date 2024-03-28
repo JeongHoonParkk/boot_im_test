@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test_ib
+    username: root
+    password: 1234!
+
+# XML 파서의 속성 설정
+javax:
+  xml:
+    accessExternalDTD: all

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="egovframework.dbTest.service.impl.dbTestMapper">
+
+	<resultMap id="dbTest"
+		type="egovframework.dbTest.service.dbTestVO">
+		<result property="id" column="ID" />
+		<result property="name" column="NAME" />
+	</resultMap>
+
+	<select id="selectTableData" resultMap="dbTest">
+		select ID, NAME from imb WHERE id = 2
+	</select>
+</mapper>
+
